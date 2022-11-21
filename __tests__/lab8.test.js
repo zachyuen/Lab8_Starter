@@ -116,7 +116,9 @@ describe('Basic user flow for Website', () => {
     // TODO - Step 5
     // At this point the item 'cart' in localStorage should be 
     // '[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]', check to make sure it is
-    let cart = await page.evaluate(() => localStorage.getItem('cart'));
+    let cart = await page.evaluate(() => {
+      return localStorage.getItem('cart')
+    });
     expect(cart).toBe('[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]');
   });
 
@@ -168,7 +170,9 @@ describe('Basic user flow for Website', () => {
     console.log('Checking the localStorage...');
     // TODO - Step 8
     // At this point he item 'cart' in localStorage should be '[]', check to make sure it is
-    let cart = await page.evaluate(() => localStorage.getItem('cart'));
+    let cart = await page.evaluate(() => {
+      return localStorage.getItem('cart')
+    });
     expect(cart).toBe('[]');
   });
 });
